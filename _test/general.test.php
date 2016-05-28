@@ -23,7 +23,7 @@
  */
 class general_plugin_webmaster_test extends DokuWikiTest {
 
-    protected $pluginsEnabled = array('backlinks');
+    protected $pluginsEnabled = array('webmaster');
 
     /**
      * Simple test to make sure the plugin.info.txt is in correct format
@@ -52,7 +52,7 @@ class general_plugin_webmaster_test extends DokuWikiTest {
     /**
      * test if plugin is loaded.
      */
-    public function test_plugin_backlinks_isloaded() {
+    public function test_plugin_webmaster_isloaded() {
         global $plugin_controller;
         $this->assertTrue(
                    in_array('webmaster', $plugin_controller->getList()),
