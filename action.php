@@ -7,8 +7,12 @@
  * @author     Marius Rieder <marius.rieder@durchmesser.ch>
  */
 
-if (!defined('DOKU_INC')) die();
-if (!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN', DOKU_INC.'lib/plugins/');
+if (!defined('DOKU_INC')) {
+    die();
+}
+if (!defined('DOKU_PLUGIN')) {
+    define('DOKU_PLUGIN', DOKU_INC.'lib/plugins/');
+}
 require_once(DOKU_PLUGIN.'action.php');
 
 class action_plugin_webmaster extends DokuWiki_Action_Plugin {
@@ -18,7 +22,9 @@ class action_plugin_webmaster extends DokuWiki_Action_Plugin {
     }   
 
     function addVerifyHeaders(&$event, $param) {
-        if (empty($event->data)||empty($event->data['meta'])) return;
+        if (empty($event->data)||empty($event->data['meta'])) {
+            return;
+        }
 
         /* Google */
         $g = $this->getConf('webmaster_google');
