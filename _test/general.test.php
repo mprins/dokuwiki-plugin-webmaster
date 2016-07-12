@@ -29,7 +29,7 @@ class general_plugin_webmaster_test extends DokuWikiTest {
      * Simple test to make sure the plugin.info.txt is in correct format
      */
     public function test_plugininfo() {
-        $file = __DIR__ . '/../plugin.info.txt';
+        $file = __DIR__.'/../plugin.info.txt';
         $this->assertFileExists($file);
 
         $info = confToHash($file);
@@ -55,8 +55,8 @@ class general_plugin_webmaster_test extends DokuWikiTest {
     public function test_plugin_webmaster_isloaded() {
         global $plugin_controller;
         $this->assertTrue(
-                   in_array('webmaster', $plugin_controller->getList()),
-                   "webmaster plugin is loaded"
-                         );
+                    in_array('webmaster', $plugin_controller->getList()),
+                    "webmaster plugin is loaded"
+                            );
     }
 }
