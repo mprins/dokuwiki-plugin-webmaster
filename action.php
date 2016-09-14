@@ -6,7 +6,6 @@
  * @author     Mark C. Prins <mprins@users.sf.net>
  * @author     Marius Rieder <marius.rieder@durchmesser.ch>
  */
-
 if (!defined('DOKU_INC')) {
     die();
 }
@@ -17,11 +16,11 @@ require_once(DOKU_PLUGIN.'action.php');
 
 class action_plugin_webmaster extends DokuWiki_Action_Plugin {
 
-    function register(Doku_Event_Handler $controller) {
+    public function register(Doku_Event_Handler $controller) {
         $controller->register_hook('TPL_METAHEADER_OUTPUT', 'BEFORE', $this, 'addVerifyHeaders', array());
-    }   
+    }
 
-    function addVerifyHeaders(&$event, $param) {
+    public function addVerifyHeaders(Doku_Event $event, $param) {
         if (empty($event->data)||empty($event->data['meta'])) {
             return;
         }
@@ -43,7 +42,7 @@ class action_plugin_webmaster extends DokuWiki_Action_Plugin {
         /* Yandex */
         $y = $this->getConf('webmaster_yandexkey');
         if (!empty($y)) {
-            $y = array('name' => 'yandex-verification', 'content' => $y); 
+            $y = array('name' => 'yandex-verification', 'content' => $y);
             $event->data['meta'][] = $y;
         }
     }

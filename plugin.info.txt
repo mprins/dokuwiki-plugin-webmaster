@@ -1,7 +1,7 @@
 base   webmaster
 author Mark C. Prins
 email  mprins@users.sf.net
-date   2016-02-04
+date   2016-09-14
 name   webmaster tools plugin
 desc   Adds webmaster site verification keys for Google, Bing and Yandex to your wiki pages.
 url    http://dokuwiki.org/plugin:webmaster
