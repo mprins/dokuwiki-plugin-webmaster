@@ -40,8 +40,9 @@ install:
   - IF NOT EXIST php-installed.txt echo extension=php_pdo_sqlite.dll >> php.ini
   - IF NOT EXIST php-installed.txt appveyor DownloadFile https://phar.phpunit.de/phpunit-%PHPUNIT%.phar -FileName phpunit.phar
   - IF NOT EXIST php-installed.txt type nul >> php-installed.txt
+  - cd c:\dokuwiki
   - git init
-  - git pull https://github.com/splitbrain/dokuwiki.git c:\dokuwiki
+  - git pull https://github.com/splitbrain/dokuwiki.git
 
 test_script:
   - php -v
