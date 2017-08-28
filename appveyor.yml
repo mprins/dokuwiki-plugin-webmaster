@@ -47,4 +47,4 @@ install:
 test_script:
   - php -v
   - cd c:\dokuwiki\lib\plugins\dokuwiki-plugin-webmaster\_test
-  - php c:\php\%PHP_VERSION%\phpunit.phar
+  - php c:\php\%PHP_VERSION%\phpunit.phar --stderr --group plugin_webmaster --verbose --debug
