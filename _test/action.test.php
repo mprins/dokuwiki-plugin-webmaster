@@ -33,6 +33,7 @@ class action_plugin_webmaster_test extends DokuWikiTest {
         $conf ['plugin']['webmaster']['webmaster_google'] = 'webmaster_google';
         $conf ['plugin']['webmaster']['webmaster_bing'] = 'webmaster_bing';
         $conf ['plugin']['webmaster']['webmaster_yandexkey'] = 'webmaster_yandexkey';
+        $conf ['plugin']['webmaster']['webmaster_pinterestkey'] = 'webmaster_pinterestkey';
     }
 
     public function testHeaders() {
@@ -51,5 +52,7 @@ class action_plugin_webmaster_test extends DokuWikiTest {
                         $response->queryHTML('meta[name="msvalidate.01"]')->attr('content'));
         $this->assertEquals('webmaster_yandexkey',
                         $response->queryHTML('meta[name="yandex-verification"]')->attr('content'));
+        $this->assertEquals('webmaster_pinterestkey',
+                        $response->queryHTML('meta[name="p:domain_verify"]')->attr('content'));
     }
 }

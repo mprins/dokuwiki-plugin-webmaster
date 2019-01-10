@@ -45,5 +45,12 @@ class action_plugin_webmaster extends DokuWiki_Action_Plugin {
             $y = array('name' => 'yandex-verification', 'content' => $y);
             $event->data['meta'][] = $y;
         }
+        
+        /* Pinterest */
+        $y = $this->getConf('webmaster_pinterestkey');
+        if (!empty($y)) {
+            $y = array('name' => 'p:domain_verify', 'content' => $y);
+            $event->data['meta'][] = $y;
+        }
     }
 }

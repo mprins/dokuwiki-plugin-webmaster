@@ -9,3 +9,4 @@
 $lang['webmaster_google'] = 'Google webmaster central verification key';
 $lang['webmaster_bing'] = 'bing Webmaster Center authentication code';
 $lang['webmaster_yandexkey'] = 'Yandex webmaster site verification key';
+$lang['webmaster_pinterestkey'] = 'Pinterest webmaster site verification key';

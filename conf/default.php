@@ -8,3 +8,4 @@
 $conf['webmaster_google'] = '';
 $conf['webmaster_bing'] = '';
 $conf['webmaster_yandexkey'] = '';
+$conf['webmaster_pinterestkey'] = '';

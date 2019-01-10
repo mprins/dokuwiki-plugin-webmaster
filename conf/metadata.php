@@ -8,3 +8,4 @@
 $meta['webmaster_google'] = array('string');
 $meta['webmaster_bing'] = array('string');
 $meta['webmaster_yandexkey'] = array('string');
+$meta['webmaster_pinterestkey'] = array('string');
