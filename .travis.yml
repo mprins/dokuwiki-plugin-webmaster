@@ -12,10 +12,6 @@ php:
 matrix:
   allow_failures:
     - php: "hhvm"
-    - php: "7.2"
-      env: DOKUWIKI=stable
-    - php: "7.1"
-      env: DOKUWIKI=stable
 
 env:
   - DOKUWIKI=master
