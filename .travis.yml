@@ -1,4 +1,3 @@
-dist: trusty
 language: php
 
 php:
@@ -7,11 +6,6 @@ php:
   - "7.1"
   - "7.0"
   - "5.6"
-  - "hhvm"
-
-matrix:
-  allow_failures:
-    - php: "hhvm"
 
 env:
   - DOKUWIKI=master
@@ -23,5 +17,8 @@ before_install:
 install:
   - sh travis.sh
 
+before_script:
+  - ./_test/phpunit.phar --version
+
 script:
-  - cd _test && PRESERVE_TMP=false phpunit --stderr --group plugin_webmaster --verbose --debug
+  - cd _test && PRESERVE_TMP=false ./phpunit.phar --stderr --group plugin_webmaster --verbose --debug
