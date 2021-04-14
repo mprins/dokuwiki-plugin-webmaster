@@ -6,13 +6,6 @@
  * @author     Mark C. Prins <mprins@users.sf.net>
  * @author     Marius Rieder <marius.rieder@durchmesser.ch>
  */
-if (!defined('DOKU_INC')) {
-    die();
-}
-if (!defined('DOKU_PLUGIN')) {
-    define('DOKU_PLUGIN', DOKU_INC.'lib/plugins/');
-}
-require_once(DOKU_PLUGIN.'action.php');
 
 class action_plugin_webmaster extends DokuWiki_Action_Plugin {
 

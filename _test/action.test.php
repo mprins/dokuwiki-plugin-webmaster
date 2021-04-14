@@ -25,7 +25,7 @@ class action_plugin_webmaster_test extends DokuWikiTest {
 
     protected $pluginsEnabled = array('webmaster');
 
-    public function setUp() {
+    public function setUp(): void {
         global $conf;
 
         parent::setUp();
@@ -36,7 +36,7 @@ class action_plugin_webmaster_test extends DokuWikiTest {
         $conf ['plugin']['webmaster']['webmaster_pinterestkey'] = 'webmaster_pinterestkey';
     }
 
-    public function testHeaders() {
+    public function testHeaders(): void {
         $request = new TestRequest();
         $response = $request->get(array('id'=>'wiki:dokuwiki'), '/doku.php');
 

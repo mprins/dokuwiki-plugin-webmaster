@@ -28,7 +28,7 @@ class general_plugin_webmaster_test extends DokuWikiTest {
     /**
      * Simple test to make sure the plugin.info.txt is in correct format
      */
-    public function test_plugininfo() {
+    public function test_plugininfo(): void {
         $file = __DIR__.'/../plugin.info.txt';
         $this->assertFileExists($file);
 
