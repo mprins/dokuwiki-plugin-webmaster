@@ -30,29 +30,36 @@ class action_plugin_webmaster_test extends DokuWikiTest {
 
         parent::setUp();
 
-        $conf ['plugin']['webmaster']['webmaster_google'] = 'webmaster_google';
-        $conf ['plugin']['webmaster']['webmaster_bing'] = 'webmaster_bing';
-        $conf ['plugin']['webmaster']['webmaster_yandexkey'] = 'webmaster_yandexkey';
+        $conf ['plugin']['webmaster']['webmaster_google']       = 'webmaster_google';
+        $conf ['plugin']['webmaster']['webmaster_bing']         = 'webmaster_bing';
+        $conf ['plugin']['webmaster']['webmaster_yandexkey']    = 'webmaster_yandexkey';
         $conf ['plugin']['webmaster']['webmaster_pinterestkey'] = 'webmaster_pinterestkey';
     }
 
     public function testHeaders(): void {
-        $request = new TestRequest();
-        $response = $request->get(array('id'=>'wiki:dokuwiki'), '/doku.php');
+        $request  = new TestRequest();
+        $response = $request->get(array('id' => 'wiki:dokuwiki'), '/doku.php');
 
-        $this->assertTrue(
-            strpos($response->getContent(), 'DokuWiki') !== false,
-            'DokuWiki was not a word in the output'
+        $this->assertNotFalse(
+            strpos($response->getContent(), 'DokuWiki'), 'DokuWiki was not a word in the output'
         );
 
         // check webmaster meta headers
-        $this->assertEquals('webmaster_google',
-                        $response->queryHTML('meta[name="google-site-verification"]')->attr('content'));
-        $this->assertEquals('webmaster_bing',
-                        $response->queryHTML('meta[name="msvalidate.01"]')->attr('content'));
-        $this->assertEquals('webmaster_yandexkey',
-                        $response->queryHTML('meta[name="yandex-verification"]')->attr('content'));
-        $this->assertEquals('webmaster_pinterestkey',
-                        $response->queryHTML('meta[name="p:domain_verify"]')->attr('content'));
+        $this->assertEquals(
+            'webmaster_google',
+            $response->queryHTML('meta[name="google-site-verification"]')->attr('content')
+        );
+        $this->assertEquals(
+            'webmaster_bing',
+            $response->queryHTML('meta[name="msvalidate.01"]')->attr('content')
+        );
+        $this->assertEquals(
+            'webmaster_yandexkey',
+            $response->queryHTML('meta[name="yandex-verification"]')->attr('content')
+        );
+        $this->assertEquals(
+            'webmaster_pinterestkey',
+            $response->queryHTML('meta[name="p:domain_verify"]')->attr('content')
+        );
     }
 }
